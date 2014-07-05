@@ -1,11 +1,10 @@
-Package Fileload;
+package Antigen;
 
 #module to load in data and add to a hash
-
 use strict;
 
-sub Fileload(){
-    
+sub Fileload{
+
     my %antigen;
 
     while (my $line = <>) {
@@ -14,3 +13,4 @@ sub Fileload(){
     }
     return %antigen;
 }
+1;
