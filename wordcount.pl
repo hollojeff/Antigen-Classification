@@ -1,17 +1,16 @@
 #!/usr/bin/perl
 
-use Antigen;
 use strict;
 
-my %antigen = Antigen::Fileload;
+open MYDATA, "train.dat" or die $!;
 
-my @wordCount = values %antigen;
-print scalar @wordCount,"\n";
+my @antigen = <MYDATA>;
 my %list;
+my @splitWord = ();
 
-for (my $i=0; $i < scalar @wordCount; $i++){
+foreach my $wordCount (@antigen) {
 	# split command to break up strings
-	my @splitWord = split(/-|\s/, $wordCount[$i]);
+	@splitWord = split(/-|\s|,|\)|\(|'|\//, $wordCount);
 
 	# put into hash - key is the word, value is the count
 	foreach my $word (@splitWord){
@@ -19,8 +18,14 @@ for (my $i=0; $i < scalar @wordCount; $i++){
 	}
 }
 
+print @splitWord;
+
 #sort by highest tally of words, then print top 20?
 
-foreach my $code (sort {$list{$a} <=> $list{$b}} keys %list) {
-   print "$code = $list{$code}\n"; 
+foreach my $code (sort {$list{$b} <=> $list{$a}} keys %list) {
+	if (length($code) > 2){
+	open (MYFILE, '>>wordcount.dat');
+	print MYFILE "$code = $list{$code}\n";
+	close (MYFILE);
+	}
 }
