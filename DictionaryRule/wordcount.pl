@@ -1,8 +1,14 @@
 #!/usr/bin/perl
 
+#wordcount.pl by Jeffrey Hurst
+#
+# This script takes the training data, splits it into
+# seperate words or tokens, then returns it as a text
+# file in order from most to least common.
+
 use strict;
 
-open MYDATA, "unknown.dat" or die $!;
+open MYDATA, "train.dat" or die $!;
 
 my @antigen = <MYDATA>;
 my %list;
@@ -21,10 +27,10 @@ foreach my $wordCount (@antigen) {
 
 print @splitWord;
 
-#sort by highest tally of words, then print top 20?
+#sort by highest tally of words, then add to file.
 
 foreach my $code (sort {$list{$b} <=> $list{$a}} keys %list) {
-	open (MYFILE, '>>unknownwordcount.dat');
+	open (MYFILE, '>>wordcount.txt');
 	print MYFILE "$code = $list{$code}\n";
 	close (MYFILE);
 }
