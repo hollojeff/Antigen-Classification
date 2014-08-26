@@ -1,5 +1,13 @@
 #!/usr/bin/perl
 
+#transformtest.pl by Jeffrey Hurst
+#
+#create the test data needed by LibSVM by transforming the data
+#numerically. Each token within the training set is assigned an integer,
+#this is then used to create the classes to train on. Each index number
+#within a class is then assigned the percentage of how frequent it 
+#appears in the data.
+
 use strict;
 use List::Util qw(sum);
 
@@ -8,6 +16,9 @@ open MYDATA, "train.dat" or die $!;
 my @antigen = <MYDATA>;
 my %list;
 my @splitWord = ();
+
+#create the dictionary - each word is assigned to an interger number
+# this time doesn't need output
 
 foreach my $wordCount (@antigen) {
 	# split command to break up strings
@@ -22,7 +33,7 @@ foreach my $wordCount (@antigen) {
 	}
 }
 my $i = 1;
-my %dictionary;
+my %dictionary; #create dictionary hash, also create text file
 foreach my $code (sort {$list{$b} <=> $list{$a}} keys %list) {
 	$dictionary{$code} = $i;
 	$i++;
@@ -39,10 +50,10 @@ foreach my $wordCount(@content){
 	}
 	foreach my $word (@splitWord){
 		if ($word ne " "){
-			$catdict{$dictionary{$word}}++;
+			$catdict{$dictionary{$word}}++; #if not empty, add to hash
 		}
 	}
-	my $total = sum(values %catdict);
+	my $total = sum(values %catdict); #add together all the values for total number of tokens in entity
 	my $filename = "SVMtest.dat";
 
 	open (MYFILE, ">>$filename");
@@ -50,7 +61,7 @@ foreach my $wordCount(@content){
 	close (MYFILE);
 
 	foreach my $code (sort { $a <=> $b} keys %catdict) {
-		$catdict{$code} = $catdict{$code}/$total;
+		$catdict{$code} = $catdict{$code}/$total; #work out frequency of appearence
 		if ($code ne ""){
 			open (MYFILE, ">>$filename");
 			print MYFILE "$code:$catdict{$code} ";
