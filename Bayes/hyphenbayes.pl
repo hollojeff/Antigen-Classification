@@ -1,5 +1,11 @@
 #!/usr/bin/perl
 
+#hyphenbayes.pl by Jeffrey Hurst
+#
+#Using the Algorithm::NaiveBayes by Ken Williams to
+#train the classifier on hyphenated text, then to
+#test it on syllablized data.
+
 use strict;
 use Algorithm::NaiveBayes;
 
