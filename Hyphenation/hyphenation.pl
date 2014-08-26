@@ -1,6 +1,11 @@
-#
-
 #!/usr/bin/perl
+
+#hyphenation.pl by Jeffrey Hurst
+#
+# Using the TeX::Hyphen module by Jan Pazdziora to split
+# entities into syllables with the antigenhyph.tex file.
+# Asks for filename to be outputted, which then creates
+# a text file.
 
 use TeX::Hyphen;
 use strict;
@@ -10,7 +15,7 @@ my @antigen = ();
 my %list;
 my @splitWord = ();
 my @hypList = ();
-my $hyp = new TeX::Hyphen 'antigenhyph.tex';
+my $hyp = new TeX::Hyphen 'antigenhyph.tex'; #load in hyphen rules
 
 while (my $line = <>){
 	push (@antigen, $line);
@@ -24,9 +29,9 @@ foreach my $wordCount (@antigen) {
 		my @hypWord = ();
 		# put into hash - key is the word, value is the count
 		foreach my $word (@splitWord){
-			$word = lc $word;
-			$word = $hyp->visualize($word);
-			$word = uc $word;
+			$word = lc $word; #hyphen file is lower case
+			$word = $hyp->visualize($word); #splits word
+			$word = uc $word; #antigen names are upper case
 			push (@hypWord,  $word)
 		}
 		unshift @hypWord, $1; 
