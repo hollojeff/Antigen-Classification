@@ -1,0 +1,76 @@
+hapten
+
+Test file size: 118
+Result file size: 95
+
+Correct Results: 94\118
+Precision = 0.989473684210526
+Recall = 0.796610169491525
+F1-score = 0.882629107981221
+
+lipid
+
+Test file size: 23
+Result file size: 20
+
+Correct Results: 15\23
+Precision = 0.75
+Recall = 0.652173913043478
+F1-score = 0.697674418604651
+
+nucleotide
+
+Test file size: 51
+Result file size: 45
+
+Correct Results: 44\51
+Precision = 0.977777777777778
+Recall = 0.862745098039216
+F1-score = 0.916666666666667
+
+peptide
+
+Test file size: 13
+Result file size: 9
+
+Correct Results: 9\13
+Precision = 1
+Recall = 0.692307692307692
+F1-score = 0.818181818181818
+
+protein
+
+Test file size: 208
+Result file size: 250
+
+Correct Results: 194\208
+Precision = 0.776
+Recall = 0.932692307692308
+F1-score = 0.847161572052402
+
+sugar
+
+Test file size: 48
+Result file size: 19
+
+Correct Results: 19\48
+Precision = 1
+Recall = 0.395833333333333
+F1-score = 0.567164179104478
+
+virus
+
+Test file size: 38
+Result file size: 46
+
+Correct Results: 33\38
+Precision = 0.717391304347826
+Recall = 0.868421052631579
+F1-score = 0.785714285714286
+
+OVERALL
+
+Precision = 0.84297520661157
+Recall = 0.817635270541082
+F1-score = 0.830111902339776
+

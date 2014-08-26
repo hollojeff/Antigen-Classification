@@ -1,0 +1,152 @@
+hapten
+
+Test file size: 118
+Result file size: 115
+
+Correct Results: 112\118
+Precision = 0.973913043478261
+Recall = 0.949152542372881
+F1-score = 0.96137339055794
+
+lipid
+
+Test file size: 23
+Result file size: 42
+
+Correct Results: 21\23
+Precision = 0.5
+Recall = 0.91304347826087
+F1-score = 0.646153846153846
+
+nucleotide
+
+Test file size: 51
+Result file size: 64
+
+Correct Results: 49\51
+Precision = 0.765625
+Recall = 0.96078431372549
+F1-score = 0.852173913043478
+
+peptide
+
+Test file size: 13
+Result file size: 15
+
+Correct Results: 9\13
+Precision = 0.6
+Recall = 0.692307692307692
+F1-score = 0.642857142857143
+
+protein
+
+Test file size: 208
+Result file size: 178
+
+Correct Results: 170\208
+Precision = 0.955056179775281
+Recall = 0.817307692307692
+F1-score = 0.880829015544041
+
+sugar
+
+Test file size: 48
+Result file size: 34
+
+Correct Results: 24\48
+Precision = 0.705882352941177
+Recall = 0.5
+F1-score = 0.585365853658537
+
+virus
+
+Test file size: 38
+Result file size: 50
+
+Correct Results: 31\38
+Precision = 0.62
+Recall = 0.815789473684211
+F1-score = 0.704545454545455
+
+OVERALL
+
+Precision = 0.835341365461847
+Recall = 0.833667334669339
+F1-score = 0.834503510531595
+
+hapten
+
+Test file size: 118
+Result file size: 115
+
+Correct Results: 112\118
+Precision = 0.973913043478261
+Recall = 0.949152542372881
+F1-score = 0.96137339055794
+
+lipid
+
+Test file size: 23
+Result file size: 44
+
+Correct Results: 21\23
+Precision = 0.477272727272727
+Recall = 0.91304347826087
+F1-score = 0.626865671641791
+
+nucleotide
+
+Test file size: 51
+Result file size: 60
+
+Correct Results: 49\51
+Precision = 0.816666666666667
+Recall = 0.96078431372549
+F1-score = 0.882882882882883
+
+peptide
+
+Test file size: 13
+Result file size: 17
+
+Correct Results: 9\13
+Precision = 0.529411764705882
+Recall = 0.692307692307692
+F1-score = 0.6
+
+protein
+
+Test file size: 208
+Result file size: 168
+
+Correct Results: 160\208
+Precision = 0.952380952380952
+Recall = 0.769230769230769
+F1-score = 0.851063829787234
+
+sugar
+
+Test file size: 48
+Result file size: 45
+
+Correct Results: 24\48
+Precision = 0.533333333333333
+Recall = 0.5
+F1-score = 0.516129032258065
+
+virus
+
+Test file size: 38
+Result file size: 50
+
+Correct Results: 31\38
+Precision = 0.62
+Recall = 0.815789473684211
+F1-score = 0.704545454545455
+
+OVERALL
+
+Precision = 0.813627254509018
+Recall = 0.813627254509018
+F1-score = 0.813627254509018
+

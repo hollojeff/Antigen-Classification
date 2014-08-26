@@ -2,30 +2,31 @@
 
 use strict;
 
-open MYDATA, "train.dat" or die $!;
-
-my @antigen = <MYDATA>;
+my @antigen = ();
 my %list;
 my @splitWord = ();
 
+while (my $line = <>){
+	push (@antigen, $line);
+}
+
 foreach my $wordCount (@antigen) {
 	# split command to break up strings
-	@splitWord = split(/-|\s|,|\)|\(|'|\//, $wordCount);
-
+	if ($wordCount =~ /.+?, (.+)\n/){
+		@splitWord = split(/-|\s/, $1);
+	}
 	# put into hash - key is the word, value is the count
 	foreach my $word (@splitWord){
 		$list{$word}++;
 	}
 }
 
-print @splitWord;
-
-#sort by highest tally of words, then print top 20?
+print "Name of output file:\n";
+my $input = <STDIN>;
+chomp $input;
 
 foreach my $code (sort {$list{$b} <=> $list{$a}} keys %list) {
-	if (length($code) > 2){
-	open (MYFILE, '>>wordcount.dat');
+	open (MYFILE, ">>$input");
 	print MYFILE "$code = $list{$code}\n";
 	close (MYFILE);
 	}
-}

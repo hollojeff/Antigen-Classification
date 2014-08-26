@@ -10,7 +10,7 @@ my @antigen = ();
 my %list;
 my @splitWord = ();
 my @hypList = ();
-my $hyp = new TeX::Hyphen 'hyphen.tex';
+my $hyp = new TeX::Hyphen 'antigenhyph.tex';
 
 while (my $line = <>){
 	push (@antigen, $line);
